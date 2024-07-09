@@ -1150,7 +1150,8 @@ class MotionBlind:
         return True
 
     def _parse_response(self, response):
-#        _LOGGER.critical(f'PASKUDA:    {response['data']}')
+        """ _LOGGER.critical(f'PASKUDA:    {response['data']}') """
+        """
         for k in response["data"]:
             try:
                 response["data"][k] = math.floor(int(response["data"][k]))
@@ -1158,7 +1159,7 @@ class MotionBlind:
                 pass
             except ValueError:
                 pass
-
+        """
         """Parse a response form the blind."""
         try:
             # handle the part that is common among all blinds
