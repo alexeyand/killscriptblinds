@@ -2,9 +2,9 @@
 name = "killscriptblinds"
 version = "0.6.24"
 authors = [
-  { name="killscript", email="alex@darkvpn.net" },
+  { name="killscript", email="alex@dynamo.fm" },
 ]
-description = "killscriptblinds"
+description = "Python library for interfacing with Motion Blinds"
 readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
