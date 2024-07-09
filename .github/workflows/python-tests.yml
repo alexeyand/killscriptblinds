@@ -1,5 +1,4 @@
 name: Run python tests
-
 on:
   push:
     branches: [ main ]
