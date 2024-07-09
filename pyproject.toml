@@ -1,9 +1,3 @@
-[build-system]
-requires = ["setuptools>=64", "setuptools_scm>=8"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools_scm]
-
 [project]
 name = "killscriptblinds"
 description = "Python library for interfacing with Motion Blinds"
@@ -14,10 +8,10 @@ authors = [
   { name="killscript",   email="alex@dynamo.fm" },
   { name='starkillerOG', email='starkiller.og@gmail.com' },
 ]
-dynamic = ["dependencies"]
-[tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
-requires-python = ">=3.12"
+dependencies = [
+    "pycryptodomex"
+]
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
