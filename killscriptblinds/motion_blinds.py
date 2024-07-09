@@ -1159,8 +1159,6 @@ class MotionBlind:
             except ValueError:
                 pass
 
-#        _LOGGER.critical(f'NOT PASKUDA:    {response['data']}')
-
         """Parse a response form the blind."""
         try:
             # handle the part that is common among all blinds
