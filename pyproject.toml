@@ -1,0 +1,18 @@
+[project]
+name = "killscriptblinds"
+version = "0.6.24"
+authors = [
+  { name="killscript", email="alex@darkvpn.net" },
+]
+description = "killscriptblinds"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/alexeyand/killscript-blinds"
+Issues = "https://github.com/alexeyand/killscript-blinds/issues"
