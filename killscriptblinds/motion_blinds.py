@@ -10,6 +10,7 @@ import logging
 import socket
 import json
 import re
+import math
 import struct
 import datetime
 from enum import IntEnum
@@ -107,7 +108,7 @@ class LimitStatus(IntEnum):
     BottomLimitDetected = 2
     BothLimitsDetected = 3
     Limit3Detected = 4
-    
+
 
 class VoltageMode(IntEnum):
     """Voltage mode of the blind."""
@@ -237,7 +238,7 @@ class MotionDiscovery(MotionCommunication):
             try:
                 data, (ip, _) = self._mcastsocket.recvfrom(SOCKET_BUFSIZE)
                 response = json.loads(data)
-                _LOGGER.warning(f'SUKA:     {response}')
+                # _LOGGER.warning(f'SUKA:     {response}')
                 # check msgType
                 msgType = response.get("msgType")
                 if msgType != "GetDeviceListAck":
@@ -1150,10 +1151,9 @@ class MotionBlind:
 
     def _parse_response(self, response):
 #        _LOGGER.critical(f'PASKUDA:    {response['data']}')
-        
-        import math
         for k in response["data"]:
-            try: response["data"][k] = math.floor(int(response["data"][k]))
+            try: 
+                response["data"][k] = math.floor(int(response["data"][k]))
             except: None
 
 #        _LOGGER.critical(f'NOT PASKUDA:    {response['data']}')
@@ -1166,8 +1166,7 @@ class MotionBlind:
 
             # handle specific properties
             try:
-                self._status = BlindStatus(response["data"]["operation"])
-              
+                self._status = BlindStatus(response["data"]["operation"])              
             except KeyError:
                 self._status = BlindStatus.Unknown
             except ValueError:
@@ -1194,7 +1193,6 @@ class MotionBlind:
                         response["data"]["currentState"],
                     )
                 self._status = LimitStatus.Unknown
-            
 
             try:
                 self._battery_voltage = response["data"]["batteryLevel"] / 100.0
@@ -1287,6 +1285,7 @@ class MotionBlind:
         The Gateway will imediatly respond with the status of the blind from cache (old status).
         As soon as the blind responds over 433MHz radio, a multicast push will be sent out by the gateway with the new status.
         """
+        start = datetime.datetime.utcnow()
         if self._wireless_mode == WirelessMode.UniDirection:
             # UniDirection blinds cannot send their state, so do not wait on multicast
             self.Update_trigger()
