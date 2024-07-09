@@ -1,0 +1,1 @@
+# killscript-blinds
