@@ -25,5 +25,5 @@ from .motion_blinds import DEVICE_TYPES_WIFI
 
 logging.getLogger(__name__)
 
-__title__ = "motion-blinds"
+__title__ = "killscriptblinds"
 __version__ = "0.6.24"
