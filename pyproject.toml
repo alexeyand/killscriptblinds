@@ -1,11 +1,16 @@
 [project]
 name = "killscriptblinds"
+description = "Python library for interfacing with Motion Blinds"
+license = { file = "LICENSE" }
+readme =  "README.md"
 version = "0.6.24"
 authors = [
-  { name="killscript", email="alex@dynamo.fm" },
+  { name="killscript",   email="alex@dynamo.fm" },
+  { name='starkillerOG', email='starkiller.og@gmail.com' },
 ]
-description = "Python library for interfacing with Motion Blinds"
-readme = "README.md"
+dynamic = ["dependencies"]
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
 requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -14,5 +19,6 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/alexeyand/killscript-blinds"
-Issues = "https://github.com/alexeyand/killscript-blinds/issues"
+Homepage =   "https://github.com/alexeyand/killscript-blinds"
+Issues =     "https://github.com/alexeyand/killscript-blinds/issues"
+Repository = "https://github.com/alexeyand/killscript-blinds.git"
