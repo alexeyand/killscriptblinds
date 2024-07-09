@@ -1152,9 +1152,12 @@ class MotionBlind:
     def _parse_response(self, response):
 #        _LOGGER.critical(f'PASKUDA:    {response['data']}')
         for k in response["data"]:
-            try: 
+            try:
                 response["data"][k] = math.floor(int(response["data"][k]))
-            except: None
+            except KeyError:
+                pass
+            except ValueError:
+                pass
 
 #        _LOGGER.critical(f'NOT PASKUDA:    {response['data']}')
 
@@ -1166,7 +1169,7 @@ class MotionBlind:
 
             # handle specific properties
             try:
-                self._status = BlindStatus(response["data"]["operation"])              
+                self._status = BlindStatus(response["data"]["operation"])
             except KeyError:
                 self._status = BlindStatus.Unknown
             except ValueError:
