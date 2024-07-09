@@ -1149,7 +1149,7 @@ class MotionBlind:
         return True
 
     def _parse_response(self, response):
-        _LOGGER.critical(f'PASKUDA:    {response['data']}')
+#        _LOGGER.critical(f'PASKUDA:    {response['data']}')
         
         import math
         for k in response["data"]:
