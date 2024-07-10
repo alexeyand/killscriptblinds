@@ -2,23 +2,20 @@
 name = "killscriptblinds"
 description = "Python library for interfacing with Motion Blinds"
 license = { file = "LICENSE" }
-readme =  "README.md"
+readme = "README.md"
 version = "0.6.24"
 authors = [
-  { name="killscript",   email="alex@dynamo.fm" },
-  { name='starkillerOG', email='starkiller.og@gmail.com' },
+  { name = "killscript", email = "alex@dynamo.fm" },
+  { name = "starkillerOG", email = "starkiller.og@gmail.com" },
 ]
-dependencies = [
-    "pycryptodomex"
-]
+dependencies = [ "pycryptodomex" ]
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
+    "Operating System :: OS Independent"
 ]
-
 [project.urls]
-Homepage =   "https://github.com/alexeyand/killscript-blinds"
-Issues =     "https://github.com/alexeyand/killscript-blinds/issues"
-Repository = "https://github.com/alexeyand/killscript-blinds.git"
+Homepage = "https://github.com/alexeyand/killscriptblinds"
+Issues = "https://github.com/alexeyand/killscriptblinds/issues"
+Repository = "https://github.com/alexeyand/killscriptblinds.git"
