@@ -1,4 +1,4 @@
-name: Publish motionblinds on PyPI
+name: Publish killscriptblinds
 
 on:
   release:
